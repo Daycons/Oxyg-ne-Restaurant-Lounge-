@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Oxygène Restaurant & Lounge</title>
+
+<style>
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background:#0f0f0f;
+  color:white;
+  line-height:1.6;
+}
+
+/* HEADER */
+header {
+  height:100vh;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+              url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1600");
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+}
+
+header h1 {
+  font-size:2.5rem;
+  color:#d4af37;
+}
+
+header p {
+  margin:15px 0;
+}
+
+.btn {
+  display:inline-block;
+  padding:12px 25px;
+  background:#d4af37;
+  color:black;
+  font-weight:bold;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+}
+
+/* SECTIONS */
+section {
+  padding:50px 20px;
+  max-width:1100px;
+  margin:auto;
+}
+
+h2 {
+  margin-bottom:20px;
+  color:#d4af37;
+}
+
+/* MENU */
+.menu {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+  gap:20px;
+}
+
+.card {
+  background:#1c1c1c;
+  padding:20px;
+  border-radius:10px;
+  text-align:center;
+}
+
+/* FORM */
+form {
+  display:grid;
+  gap:10px;
+}
+
+input, select {
+  padding:10px;
+  border:none;
+  border-radius:5px;
+}
+
+footer {
+  background:black;
+  text-align:center;
+  padding:20px;
+  margin-top:40px;
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  header h1 {
+    font-size:1.8rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div>
+    <h1>Oxygène Restaurant & Lounge</h1>
+    <p>Expérience culinaire unique à Abidjan</p>
+    <button class="btn" onclick="scrollToReservation()">Réserver maintenant</button>
+  </div>
+</header>
+
+<section>
+  <h2>Notre Menu</h2>
+  <div class="menu">
+    <div class="card">
+      <h3>Grillades</h3>
+      <p>À partir de 5000 FCFA</p>
+    </div>
+    <div class="card">
+      <h3>Plats africains</h3>
+      <p>À partir de 3000 FCFA</p>
+    </div>
+    <div class="card">
+      <h3>Cocktails</h3>
+      <p>À partir de 4000 FCFA</p>
+    </div>
+  </div>
+</section>
+
+<section id="reservation">
+  <h2>Réserver une table</h2>
+
+  <form onsubmit="return reserver(event)">
+    <input type="text" placeholder="Nom" required>
+    <input type="tel" placeholder="Téléphone" required>
+    <input type="date" required>
+    <input type="time" required>
+
+    <select required>
+      <option value="">Nombre de personnes</option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4+</option>
+    </select>
+
+    <button class="btn">Payer & Réserver</button>
+  </form>
+</section>
+
+<section>
+  <h2>Contact</h2>
+  <p>📍 Angré CNPS 9ème tranche, Abidjan</p>
+  <p>📞 07 89 89 70 70</p>
+</section>
+
+<footer>
+  <p>© 2026 Oxygène Restaurant</p>
+</footer>
+
+<script>
+function scrollToReservation() {
+  document.getElementById("reservation").scrollIntoView({
+    behavior:"smooth"
+  });
+}
+
+function reserver(e) {
+  e.preventDefault();
+
+  alert("Redirection vers paiement sécurisé...");
+
+  // Simulation paiement
+  window.location.href = "https://paydunya.com";
+
+  return false;
+}
+</script>
+
+</body>
+</html>
