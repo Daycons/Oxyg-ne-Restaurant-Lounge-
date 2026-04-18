@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Oxygène Restaurant & Lounge | Abidjan</title>
+<meta name="description" content="Restaurant lounge chic à Abidjan. Grillades, cuisine africaine, cocktails et ambiance premium. Réservez votre table en ligne.">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background:#0f0f0f;
+  color:white;
+}
+
+/* NAVBAR */
+nav {
+  position:fixed;
+  width:100%;
+  top:0;
+  background:rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px);
+  display:flex;
+  justify-content:space-between;
+  padding:15px 40px;
+  z-index:1000;
+}
+
+nav h2 {
+  color:#d4af37;
+}
+
+nav a {
+  color:white;
+  text-decoration:none;
+  margin-left:20px;
+  font-size:14px;
+}
+
+/* HEADER */
+header {
+  height:100vh;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)),
+  url("https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1600");
+  background-size:cover;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:20px;
+}
+
+header h1 {
+  font-size:3rem;
+  color:#d4af37;
+}
+
+header p {
+  margin:20px 0;
+}
+
+.btn {
+  padding:12px 25px;
+  background:#d4af37;
+  color:black;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.btn:hover {
+  background:#b8962e;
+}
+
+/* SECTIONS */
+section {
+  padding:80px 20px;
+  max-width:1100px;
+  margin:auto;
+}
+
+h2 {
+  color:#d4af37;
+  margin-bottom:30px;
+  text-align:center;
+}
+
+/* MENU */
+.menu {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+  gap:20px;
+}
+
+.card {
+  background:#1c1c1c;
+  padding:25px;
+  border-radius:10px;
+  text-align:center;
+  transition:0.3s;
+}
+
+.card:hover {
+  transform:translateY(-5px);
+}
+
+/* GALERIE */
+.gallery {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+  gap:15px;
+}
+
+.gallery img {
+  width:100%;
+  border-radius:10px;
+}
+
+/* FORM */
+form {
+  display:grid;
+  gap:15px;
+  max-width:500px;
+  margin:auto;
+}
+
+input, select {
+  padding:12px;
+  border:none;
+  border-radius:5px;
+}
+
+/* FOOTER */
+footer {
+  background:black;
+  text-align:center;
+  padding:30px;
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  header h1 {
+    font-size:2rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <h2>Oxygène</h2>
+  <div>
+    <a href="#">Accueil</a>
+    <a href="#menu">Menu</a>
+    <a href="#reservation">Réservation</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<header>
+  <div>
+    <h1>Oxygène Restaurant & Lounge</h1>
+    <p>Le luxe culinaire au cœur d’Abidjan</p>
+    <button class="btn" onclick="scrollToReservation()">Réserver maintenant</button>
+  </div>
+</header>
+
+<section id="menu">
+  <h2>Notre Menu</h2>
+  <div class="menu">
+    <div class="card">
+      <h3>Grillades Premium</h3>
+      <p>Viandes savoureuses, cuisson parfaite</p>
+    </div>
+    <div class="card">
+      <h3>Cuisine Africaine</h3>
+      <p>Saveurs locales revisitées</p>
+    </div>
+    <div class="card">
+      <h3>Cocktails Signature</h3>
+      <p>Mixologie haut de gamme</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Ambiance & Expérience</h2>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1">
+    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b">
+    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836">
+  </div>
+</section>
+
+<section id="reservation">
+  <h2>Réserver une table</h2>
+
+  <form onsubmit="return reserver(event)">
+    <input type="text" placeholder="Nom" required>
+    <input type="tel" placeholder="Téléphone" required>
+    <input type="date" required>
+    <input type="time" required>
+
+    <select required>
+      <option value="">Nombre de personnes</option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4+</option>
+    </select>
+
+    <button class="btn">Réserver maintenant</button>
+  </form>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>📍 Angré CNPS 9ème tranche, Abidjan</p>
+  <p>📞 07 89 89 70 70</p>
+</section>
+
+<footer>
+  <p>© 2026 Oxygène Restaurant & Lounge</p>
+</footer>
+
+<script>
+function scrollToReservation() {
+  document.getElementById("reservation").scrollIntoView({
+    behavior:"smooth"
+  });
+}
+
+function reserver(e) {
+  e.preventDefault();
+
+  alert("Réservation envoyée ! Nous vous contacterons.");
+
+  return false;
+}
+</script>
+
+</body>
+</html>
